@@ -15,10 +15,10 @@
   },
 
   "harmony_testnet": {
-    "deployer": "0x46B3C7b9F2cC52dB7d90cd48abEcE07cB35dbF15",
-    "factory": "0x151C94151a38564B42670b5241FbAcEB824E5281",
-    "feeReceiver": "0xd1A6A2358b3d56C4771a182Cbcee56482523E113",
-    "feeSetter": "0x66dEe52B07bA64486D3dEE3796bBccf087dCAC04"
+    "deployer": "0xc92edF0c0585cFd38D08606F98C42d528CDbD900",
+    "factory": "0xAE6fc6e36e1c77701299291978bE227a1d9Eea8A",
+    "feeReceiver": "0xc694368E0390A61973b4B7bA529800f265d624d2",
+    "feeSetter": "0x15eaa82328e1404Fc8cEa216602d14e69a0C4bf9"
   },
 
   "rinkeby": {
