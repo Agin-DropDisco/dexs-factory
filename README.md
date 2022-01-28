@@ -1,4 +1,11 @@
-# DEXSWAP CORE FACTORY CONTRACT
+# DEXswap Core . 
+
+## Clone Repository
+
+`git clone https://github.com/Agin-DropDisco/dexswap-core.git`
+
+- Migrations Move Here : https://github.com/Agin-DropDisco/dexswap-core-migrations
+## Install Dependencies
 
 `yarn`
 
