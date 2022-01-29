@@ -5,12 +5,12 @@ const DexSwapFactory = artifacts.require("DexSwapFactory");
 const DexSwapERC20 = artifacts.require("DexSwapERC20");
 const xDEXS = artifacts.require("xDEXS");
 const WETH = artifacts.require("WETH");
-
+const WONE = artifacts.require("WONE");
 
 
 const argValue = (arg, defaultValue) => process.argv.includes(arg) ? process.argv[process.argv.indexOf(arg) + 1] : defaultValue
 const network = () => argValue('--network', 'local')
-const xDEXSBASE = "0xA9c6d7F92a894310B9C04968326A9dE6D0e38724";
+// const xDEXSBASE = "0xA9c6d7F92a894310B9C04968326A9dE6D0e38724";
 
 
 module.exports = async (deployer) => {
@@ -19,20 +19,28 @@ module.exports = async (deployer) => {
     const bnWithDecimals = (number, decimals) => BN(number).mul(BN(10).pow(BN(decimals)));
     const senderAccount = (await web3.eth.getAccounts())[0];
 
-    if (network() === "rinkeby") {
+    if (network() === "harmony_testnet") {
 
 
         console.log();
         console.log(":: Deploying WETH"); 
-        const WETHInstance = await WETH.at('0xc778417E063141139Fce010982780140Aa0cD5Ab');
+        await deployer.deploy(WONE)
+        // const WETHInstance = await WETH.at('0x7466d7d0c21fa05f32f5a0fa27e12bdc06348ce2'); //SWOOP EXCHANGE
+        const WONEInstance = await WONE.deployed();
         console.log();
-        console.log(":: WETH DEPOSIT CALL");
-        await WETHInstance.deposit({ from: senderAccount, value: 1 });
+        console.log(":: WONE DEPOSIT CALL");
+        await WONEInstance.deposit({ from: senderAccount, value: 1 });
         console.log();
 
         console.log();
+        console.log(":: Start Deploying xDEXS Token");
+        await deployer.deploy(xDEXS, "xDEXS", "xDEXS", bnWithDecimals(1000000, 18));
+        const xDEXSInstance = await xDEXS.deployed();
+        await xDEXSInstance.mint(senderAccount,    bnWithDecimals(10000, 18),   { from: senderAccount }); // - 100k
+
+        console.log();
         console.log(":: Init DexSwap Deployer");
-        await deployer.deploy(DexSwapDeployer, xDEXSBASE, senderAccount, WETHInstance.address, [WETHInstance.address], [xDEXSBASE], [25]);
+        await deployer.deploy(DexSwapDeployer, xDEXSInstance.address, senderAccount, WONEInstance.address, [WONEInstance.address], [xDEXSInstance.address], [25]);
         const dexSwapDeployer = await DexSwapDeployer.deployed();
 
         console.log();
@@ -59,7 +67,7 @@ module.exports = async (deployer) => {
         
 
         console.log(":: Start Deploying FeeReceiver");
-        await deployer.deploy(DexSwapFeeReceiver, senderAccount, DexSwapFactoryInstance.address, WETHInstance.address, xDEXSBASE, senderAccount);
+        await deployer.deploy(DexSwapFeeReceiver, senderAccount, DexSwapFactoryInstance.address, WONEInstance.address, xDEXSInstance.address, senderAccount);
         const DexSwapFeeReceiverInstance =  await DexSwapFeeReceiver.deployed();
         console.log();
 
@@ -85,7 +93,7 @@ module.exports = async (deployer) => {
 
         console.log();
         console.log(":: Updating Protocol FeeReceiver");
-        await DexSwapFeeReceiverInstance.changeReceivers(xDEXSBASE, senderAccount, {from: senderAccount});
+        await DexSwapFeeReceiverInstance.changeReceivers(xDEXSInstance.address, senderAccount, {from: senderAccount});
 
         
         console.log();
@@ -109,13 +117,21 @@ module.exports = async (deployer) => {
         console.log(`Fee Receiver Address:`, DexSwapFeeReceiverInstance.address);
         console.log("====================================================================");
         
+        console.log("====================================================================");
+        console.log(`xDEXS Token Address:`,  xDEXSInstance.address);
+        console.log("====================================================================");
+
+        console.log("====================================================================");
+        console.log(`Wrapped One Address:`,  WONEInstance.address);
+        console.log("====================================================================");
+
         console.log("=============================================================================");
         console.log(`Code Hash:`, await DexSwapFactoryInstance.INIT_CODE_PAIR_HASH());
         console.log("=============================================================================");
 
         console.log("DONE");
 
-    } else if (network() === "matic") {
+    } else if (network() === "mumbai") {
 
         console.log();
         console.log(":: Deploying WETH"); 
