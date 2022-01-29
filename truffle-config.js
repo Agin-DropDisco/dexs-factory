@@ -22,7 +22,7 @@ module.exports = {
       port: 8545,
       network_id: "*"
     },
-    harmony_mainnnet: {
+    harmony: {
       provider: () => {
         return new HDWalletProvider({
           mnemonic,
@@ -31,6 +31,8 @@ module.exports = {
         });
       },
       network_id: 1666600000, // 1666600000 for mainnet
+      gasPrice: 3100000000,
+      skipDryRun: true,
     }, 
     harmony_testnet: {
       provider: () => {
