@@ -170,15 +170,15 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_factory\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"factory\",\"outputs\":[{\"internalType\":\"contract IDexSwapFactory\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"pairOwners\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"feeTo\",\"type\":\"address\"}],\"name\":\"setFeeTo\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"feeToSetter\",\"type\":\"address\"}],\"name\":\"setFeeToSetter\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"protocolFeeDenominator\",\"type\":\"uint8\"}],\"name\":\"setProtocolFee\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"pair\",\"type\":\"address\"},{\"internalType\":\"uint32\",\"name\":\"swapFee\",\"type\":\"uint32\"}],\"name\":\"setSwapFee\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"pair\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferPairOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/mnt/d/AGIN-WORKS-GITHUB/OPEN-DEFI/agin-dropdisco/factory/contracts/DexSwapFeeSetter.sol\":\"DexSwapFeeSetter\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/mnt/d/AGIN-WORKS-GITHUB/OPEN-DEFI/agin-dropdisco/factory/contracts/DexSwapFeeSetter.sol\":{\"keccak256\":\"0x36d79ec5d0f2a9e1544031a837d23f3fe083c6b4e46603f3bc7c12efb34c9911\",\"urls\":[\"bzz-raw://46d48b0d24f0b0f14a94c2060c6859e25c95e79a0df7a4a9f223ec6d4baad0ad\",\"dweb:/ipfs/QmPHhzMAfaJw7r447o5X64qDz1mXP3dqCF8VWnMZu9Q6D3\"]},\"/mnt/d/AGIN-WORKS-GITHUB/OPEN-DEFI/agin-dropdisco/factory/contracts/interfaces/IDexSwapFactory.sol\":{\"keccak256\":\"0x9cfa11b5a7a36715857803d71dc991c0925b41ef8b7fb6f814d7290452f8fa09\",\"urls\":[\"bzz-raw://8e6264aac34f27333f0d90ebcc62899d973bda55b3def619cf7e22636c938fb7\",\"dweb:/ipfs/QmRZagwHYCKx4t52H7pHo7kmtz9GS5SEu3y6BqKApoushs\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b506040516106a43803806106a48339818101604052604081101561003357600080fd5b508051602090910151600080546001600160a01b039384166001600160a01b0319918216179091556002805493909216921691909117905561062a8061007a6000396000f3fe608060405234801561001057600080fd5b50600436106100935760003560e01c8063a2e74af611610066578063a2e74af614610136578063a6dab93f1461015c578063c45a01551461018a578063f2fde38b14610192578063f46901ed146101b857610093565b806317c06b34146100985780634e91f811146100da5780638da5cb5b146100fc5780639e68ceb814610104575b600080fd5b6100be600480360360208110156100ae57600080fd5b50356001600160a01b03166101de565b604080516001600160a01b039092168252519081900360200190f35b6100fa600480360360208110156100f057600080fd5b503560ff166101f9565b005b6100be6102b0565b6100fa6004803603604081101561011a57600080fd5b5080356001600160a01b0316906020013563ffffffff166102bf565b6100fa6004803603602081101561014c57600080fd5b50356001600160a01b03166103a6565b6100fa6004803603604081101561017257600080fd5b506001600160a01b0381358116916020013516610441565b6100be6104bc565b6100fa600480360360208110156101a857600080fd5b50356001600160a01b03166104cb565b6100fa600480360360208110156101ce57600080fd5b50356001600160a01b031661053a565b6001602052600090815260409020546001600160a01b031681565b6000546001600160a01b03163314610246576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b60025460408051634e91f81160e01b815260ff8416600482015290516001600160a01b0390921691634e91f8119160248082019260009290919082900301818387803b15801561029557600080fd5b505af11580156102a9573d6000803e3d6000fd5b5050505050565b6000546001600160a01b031681565b6000546001600160a01b03163314806102f157506001600160a01b038281166000908152600160205260409020541633145b610330576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b600254604080516313cd19d760e31b81526001600160a01b03858116600483015263ffffffff8516602483015291519190921691639e68ceb891604480830192600092919082900301818387803b15801561038a57600080fd5b505af115801561039e573d6000803e3d6000fd5b505050505050565b6000546001600160a01b031633146103f3576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b60025460408051635173a57b60e11b81526001600160a01b0384811660048301529151919092169163a2e74af691602480830192600092919082900301818387803b15801561029557600080fd5b6000546001600160a01b0316331461048e576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b6001600160a01b03918216600090815260016020526040902080546001600160a01b03191691909216179055565b6002546001600160a01b031681565b6000546001600160a01b03163314610518576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b600080546001600160a01b0319166001600160a01b0392909216919091179055565b6000546001600160a01b03163314610587576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b6002546040805163f46901ed60e01b81526001600160a01b0384811660048301529151919092169163f46901ed91602480830192600092919082900301818387803b15801561029557600080fdfe446578537761704665655365747465723a20464f5242494444454e0000000000a265627a7a7231582004f62822d25f7aca511af1073729486d4828778c086cd869db90c22e5fddf53364736f6c63430005100032",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100935760003560e01c8063a2e74af611610066578063a2e74af614610136578063a6dab93f1461015c578063c45a01551461018a578063f2fde38b14610192578063f46901ed146101b857610093565b806317c06b34146100985780634e91f811146100da5780638da5cb5b146100fc5780639e68ceb814610104575b600080fd5b6100be600480360360208110156100ae57600080fd5b50356001600160a01b03166101de565b604080516001600160a01b039092168252519081900360200190f35b6100fa600480360360208110156100f057600080fd5b503560ff166101f9565b005b6100be6102b0565b6100fa6004803603604081101561011a57600080fd5b5080356001600160a01b0316906020013563ffffffff166102bf565b6100fa6004803603602081101561014c57600080fd5b50356001600160a01b03166103a6565b6100fa6004803603604081101561017257600080fd5b506001600160a01b0381358116916020013516610441565b6100be6104bc565b6100fa600480360360208110156101a857600080fd5b50356001600160a01b03166104cb565b6100fa600480360360208110156101ce57600080fd5b50356001600160a01b031661053a565b6001602052600090815260409020546001600160a01b031681565b6000546001600160a01b03163314610246576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b60025460408051634e91f81160e01b815260ff8416600482015290516001600160a01b0390921691634e91f8119160248082019260009290919082900301818387803b15801561029557600080fd5b505af11580156102a9573d6000803e3d6000fd5b5050505050565b6000546001600160a01b031681565b6000546001600160a01b03163314806102f157506001600160a01b038281166000908152600160205260409020541633145b610330576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b600254604080516313cd19d760e31b81526001600160a01b03858116600483015263ffffffff8516602483015291519190921691639e68ceb891604480830192600092919082900301818387803b15801561038a57600080fd5b505af115801561039e573d6000803e3d6000fd5b505050505050565b6000546001600160a01b031633146103f3576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b60025460408051635173a57b60e11b81526001600160a01b0384811660048301529151919092169163a2e74af691602480830192600092919082900301818387803b15801561029557600080fd5b6000546001600160a01b0316331461048e576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b6001600160a01b03918216600090815260016020526040902080546001600160a01b03191691909216179055565b6002546001600160a01b031681565b6000546001600160a01b03163314610518576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b600080546001600160a01b0319166001600160a01b0392909216919091179055565b6000546001600160a01b03163314610587576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b6002546040805163f46901ed60e01b81526001600160a01b0384811660048301529151919092169163f46901ed91602480830192600092919082900301818387803b15801561029557600080fdfe446578537761704665655365747465723a20464f5242494444454e0000000000a265627a7a7231582004f62822d25f7aca511af1073729486d4828778c086cd869db90c22e5fddf53364736f6c63430005100032",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_factory\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"factory\",\"outputs\":[{\"internalType\":\"contract IDexSwapFactory\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"pairOwners\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"feeTo\",\"type\":\"address\"}],\"name\":\"setFeeTo\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"feeToSetter\",\"type\":\"address\"}],\"name\":\"setFeeToSetter\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"protocolFeeDenominator\",\"type\":\"uint8\"}],\"name\":\"setProtocolFee\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"pair\",\"type\":\"address\"},{\"internalType\":\"uint32\",\"name\":\"swapFee\",\"type\":\"uint32\"}],\"name\":\"setSwapFee\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"pair\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferPairOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/mnt/d/AGIN-WORKS-GITHUB/HARMONY/Grant-Harmony-Source-main/DexSwap-AMM/contracts-factory/contracts/DexSwapFeeSetter.sol\":\"DexSwapFeeSetter\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/mnt/d/AGIN-WORKS-GITHUB/HARMONY/Grant-Harmony-Source-main/DexSwap-AMM/contracts-factory/contracts/DexSwapFeeSetter.sol\":{\"keccak256\":\"0x36d79ec5d0f2a9e1544031a837d23f3fe083c6b4e46603f3bc7c12efb34c9911\",\"urls\":[\"bzz-raw://46d48b0d24f0b0f14a94c2060c6859e25c95e79a0df7a4a9f223ec6d4baad0ad\",\"dweb:/ipfs/QmPHhzMAfaJw7r447o5X64qDz1mXP3dqCF8VWnMZu9Q6D3\"]},\"/mnt/d/AGIN-WORKS-GITHUB/HARMONY/Grant-Harmony-Source-main/DexSwap-AMM/contracts-factory/contracts/interfaces/IDexSwapFactory.sol\":{\"keccak256\":\"0x9cfa11b5a7a36715857803d71dc991c0925b41ef8b7fb6f814d7290452f8fa09\",\"urls\":[\"bzz-raw://8e6264aac34f27333f0d90ebcc62899d973bda55b3def619cf7e22636c938fb7\",\"dweb:/ipfs/QmRZagwHYCKx4t52H7pHo7kmtz9GS5SEu3y6BqKApoushs\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516106a43803806106a48339818101604052604081101561003357600080fd5b508051602090910151600080546001600160a01b039384166001600160a01b0319918216179091556002805493909216921691909117905561062a8061007a6000396000f3fe608060405234801561001057600080fd5b50600436106100935760003560e01c8063a2e74af611610066578063a2e74af614610136578063a6dab93f1461015c578063c45a01551461018a578063f2fde38b14610192578063f46901ed146101b857610093565b806317c06b34146100985780634e91f811146100da5780638da5cb5b146100fc5780639e68ceb814610104575b600080fd5b6100be600480360360208110156100ae57600080fd5b50356001600160a01b03166101de565b604080516001600160a01b039092168252519081900360200190f35b6100fa600480360360208110156100f057600080fd5b503560ff166101f9565b005b6100be6102b0565b6100fa6004803603604081101561011a57600080fd5b5080356001600160a01b0316906020013563ffffffff166102bf565b6100fa6004803603602081101561014c57600080fd5b50356001600160a01b03166103a6565b6100fa6004803603604081101561017257600080fd5b506001600160a01b0381358116916020013516610441565b6100be6104bc565b6100fa600480360360208110156101a857600080fd5b50356001600160a01b03166104cb565b6100fa600480360360208110156101ce57600080fd5b50356001600160a01b031661053a565b6001602052600090815260409020546001600160a01b031681565b6000546001600160a01b03163314610246576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b60025460408051634e91f81160e01b815260ff8416600482015290516001600160a01b0390921691634e91f8119160248082019260009290919082900301818387803b15801561029557600080fd5b505af11580156102a9573d6000803e3d6000fd5b5050505050565b6000546001600160a01b031681565b6000546001600160a01b03163314806102f157506001600160a01b038281166000908152600160205260409020541633145b610330576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b600254604080516313cd19d760e31b81526001600160a01b03858116600483015263ffffffff8516602483015291519190921691639e68ceb891604480830192600092919082900301818387803b15801561038a57600080fd5b505af115801561039e573d6000803e3d6000fd5b505050505050565b6000546001600160a01b031633146103f3576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b60025460408051635173a57b60e11b81526001600160a01b0384811660048301529151919092169163a2e74af691602480830192600092919082900301818387803b15801561029557600080fd5b6000546001600160a01b0316331461048e576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b6001600160a01b03918216600090815260016020526040902080546001600160a01b03191691909216179055565b6002546001600160a01b031681565b6000546001600160a01b03163314610518576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b600080546001600160a01b0319166001600160a01b0392909216919091179055565b6000546001600160a01b03163314610587576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b6002546040805163f46901ed60e01b81526001600160a01b0384811660048301529151919092169163f46901ed91602480830192600092919082900301818387803b15801561029557600080fdfe446578537761704665655365747465723a20464f5242494444454e0000000000a265627a7a72315820019b6d2dab89a304a79f72d7cc93b026fe17d557f8378c0e6880eb0e08cb54c864736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100935760003560e01c8063a2e74af611610066578063a2e74af614610136578063a6dab93f1461015c578063c45a01551461018a578063f2fde38b14610192578063f46901ed146101b857610093565b806317c06b34146100985780634e91f811146100da5780638da5cb5b146100fc5780639e68ceb814610104575b600080fd5b6100be600480360360208110156100ae57600080fd5b50356001600160a01b03166101de565b604080516001600160a01b039092168252519081900360200190f35b6100fa600480360360208110156100f057600080fd5b503560ff166101f9565b005b6100be6102b0565b6100fa6004803603604081101561011a57600080fd5b5080356001600160a01b0316906020013563ffffffff166102bf565b6100fa6004803603602081101561014c57600080fd5b50356001600160a01b03166103a6565b6100fa6004803603604081101561017257600080fd5b506001600160a01b0381358116916020013516610441565b6100be6104bc565b6100fa600480360360208110156101a857600080fd5b50356001600160a01b03166104cb565b6100fa600480360360208110156101ce57600080fd5b50356001600160a01b031661053a565b6001602052600090815260409020546001600160a01b031681565b6000546001600160a01b03163314610246576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b60025460408051634e91f81160e01b815260ff8416600482015290516001600160a01b0390921691634e91f8119160248082019260009290919082900301818387803b15801561029557600080fd5b505af11580156102a9573d6000803e3d6000fd5b5050505050565b6000546001600160a01b031681565b6000546001600160a01b03163314806102f157506001600160a01b038281166000908152600160205260409020541633145b610330576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b600254604080516313cd19d760e31b81526001600160a01b03858116600483015263ffffffff8516602483015291519190921691639e68ceb891604480830192600092919082900301818387803b15801561038a57600080fd5b505af115801561039e573d6000803e3d6000fd5b505050505050565b6000546001600160a01b031633146103f3576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b60025460408051635173a57b60e11b81526001600160a01b0384811660048301529151919092169163a2e74af691602480830192600092919082900301818387803b15801561029557600080fd5b6000546001600160a01b0316331461048e576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b6001600160a01b03918216600090815260016020526040902080546001600160a01b03191691909216179055565b6002546001600160a01b031681565b6000546001600160a01b03163314610518576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b600080546001600160a01b0319166001600160a01b0392909216919091179055565b6000546001600160a01b03163314610587576040805162461bcd60e51b815260206004820152601b60248201526000805160206105d6833981519152604482015290519081900360640190fd5b6002546040805163f46901ed60e01b81526001600160a01b0384811660048301529151919092169163f46901ed91602480830192600092919082900301818387803b15801561029557600080fdfe446578537761704665655365747465723a20464f5242494444454e0000000000a265627a7a72315820019b6d2dab89a304a79f72d7cc93b026fe17d557f8378c0e6880eb0e08cb54c864736f6c63430005100032",
   "sourceMap": "106:1407:4:-;;;254:129;8:9:-1;5:2;;;30:1;27;20:12;5:2;254:129:4;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;254:129:4;;;;;;;317:5;:14;;-1:-1:-1;;;;;317:14:4;;;-1:-1:-1;;;;;;317:14:4;;;;;;341:7;:35;;;;;;;;;;;;;;-1:-1:-1;;;;106:1407:4;;;;",
   "deployedSourceMap": "106:1407:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;106:1407:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;164:45;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;164:45:4;-1:-1:-1;;;;;164:45:4;;:::i;:::-;;;;-1:-1:-1;;;;;164:45:4;;;;;;;;;;;;;;1088:195;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1088:195:4;;;;:::i;:::-;;138:20;;;:::i;1293:218::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1293:218:4;;-1:-1:-1;;;;;1293:218:4;;;;;;;;:::i;903:175::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;903:175:4;-1:-1:-1;;;;;903:175:4;;:::i;555:185::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;555:185:4;;;;;;;;;;:::i;215:30::-;;;:::i;389:156::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;389:156:4;-1:-1:-1;;;;;389:156:4;;:::i;746:151::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;746:151:4;-1:-1:-1;;;;;746:151:4;;:::i;164:45::-;;;;;;;;;;;;-1:-1:-1;;;;;164:45:4;;:::o;1088:195::-;1183:5;;-1:-1:-1;;;;;1183:5:4;1169:10;:19;1161:59;;;;;-1:-1:-1;;;1161:59:4;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;1161:59:4;;;;;;;;;;;;;;;1230:7;;:46;;;-1:-1:-1;;;1230:46:4;;;;;;;;;;;-1:-1:-1;;;;;1230:7:4;;;;-1:-1:-1;;1230:46:4;;;;;-1:-1:-1;;1230:46:4;;;;;;;;-1:-1:-1;1230:7:4;:46;;;5:2:-1;;;;30:1;27;20:12;5:2;1230:46:4;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1230:46:4;;;;1088:195;:::o;138:20::-;;;-1:-1:-1;;;;;138:20:4;;:::o;1293:218::-;1385:5;;-1:-1:-1;;;;;1385:5:4;1371:10;:19;;1370:59;;-1:-1:-1;;;;;;1411:16:4;;;;;;;-1:-1:-1;1411:16:4;;;;;;;1397:10;:30;1370:59;1362:99;;;;;-1:-1:-1;;;1362:99:4;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;1362:99:4;;;;;;;;;;;;;;;1471:7;;:33;;;-1:-1:-1;;;1471:33:4;;-1:-1:-1;;;;;1471:33:4;;;;;;;;;;;;;;;;:7;;;;;:18;;:33;;;;;-1:-1:-1;;1471:33:4;;;;;;;-1:-1:-1;1471:7:4;:33;;;5:2:-1;;;;30:1;27;20:12;5:2;1471:33:4;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1471:33:4;;;;1293:218;;:::o;903:175::-;989:5;;-1:-1:-1;;;;;989:5:4;975:10;:19;967:59;;;;;-1:-1:-1;;;967:59:4;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;967:59:4;;;;;;;;;;;;;;;1036:7;;:35;;;-1:-1:-1;;;1036:35:4;;-1:-1:-1;;;;;1036:35:4;;;;;;;;;:7;;;;;:22;;:35;;;;;-1:-1:-1;;1036:35:4;;;;;;;-1:-1:-1;1036:7:4;:35;;;5:2:-1;;;;30:1;27;20:12;555:185:4;659:5;;-1:-1:-1;;;;;659:5:4;645:10;:19;637:59;;;;;-1:-1:-1;;;637:59:4;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;637:59:4;;;;;;;;;;;;;;;-1:-1:-1;;;;;706:16:4;;;;;;;-1:-1:-1;706:16:4;;;;;:27;;-1:-1:-1;;;;;;706:27:4;;;;;;;;555:185::o;215:30::-;;;-1:-1:-1;;;;;215:30:4;;:::o;389:156::-;475:5;;-1:-1:-1;;;;;475:5:4;461:10;:19;453:59;;;;;-1:-1:-1;;;453:59:4;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;453:59:4;;;;;;;;;;;;;;;522:5;:16;;-1:-1:-1;;;;;;522:16:4;-1:-1:-1;;;;;522:16:4;;;;;;;;;;389:156::o;746:151::-;820:5;;-1:-1:-1;;;;;820:5:4;806:10;:19;798:59;;;;;-1:-1:-1;;;798:59:4;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;798:59:4;;;;;;;;;;;;;;;867:7;;:23;;;-1:-1:-1;;;867:23:4;;-1:-1:-1;;;;;867:23:4;;;;;;;;;:7;;;;;-1:-1:-1;;867:23:4;;;;;-1:-1:-1;;867:23:4;;;;;;;-1:-1:-1;867:7:4;:23;;;5:2:-1;;;;30:1;27;20:12",
   "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity =0.5.16;\n\nimport './interfaces/IDexSwapFactory.sol';\n\ncontract DexSwapFeeSetter {\n    address public owner;\n    mapping(address => address) public pairOwners;\n    IDexSwapFactory public factory;\n  \n    constructor(address _owner, address _factory) public {\n        owner = _owner;\n        factory = IDexSwapFactory(_factory);\n    }\n\n    function transferOwnership(address newOwner) external {\n        require(msg.sender == owner, 'DexSwapFeeSetter: FORBIDDEN');\n        owner = newOwner;\n    }\n    \n    function transferPairOwnership(address pair, address newOwner) external {\n        require(msg.sender == owner, 'DexSwapFeeSetter: FORBIDDEN');\n        pairOwners[pair] = newOwner;\n    }\n\n    function setFeeTo(address feeTo) external {\n        require(msg.sender == owner, 'DexSwapFeeSetter: FORBIDDEN');\n        factory.setFeeTo(feeTo);\n    }\n\n    function setFeeToSetter(address feeToSetter) external {\n        require(msg.sender == owner, 'DexSwapFeeSetter: FORBIDDEN');\n        factory.setFeeToSetter(feeToSetter);\n    }\n    \n    function setProtocolFee(uint8 protocolFeeDenominator) external {\n        require(msg.sender == owner, 'DexSwapFeeSetter: FORBIDDEN');\n        factory.setProtocolFee(protocolFeeDenominator);\n    }\n    \n    function setSwapFee(address pair, uint32 swapFee) external {\n        require((msg.sender == owner) || ((msg.sender == pairOwners[pair])), 'DexSwapFeeSetter: FORBIDDEN');\n        factory.setSwapFee(pair, swapFee);\n    }\n}\n",
-  "sourcePath": "/mnt/d/AGIN-WORKS-GITHUB/OPEN-DEFI/agin-dropdisco/factory/contracts/DexSwapFeeSetter.sol",
+  "sourcePath": "/mnt/d/AGIN-WORKS-GITHUB/HARMONY/Grant-Harmony-Source-main/DexSwap-AMM/contracts-factory/contracts/DexSwapFeeSetter.sol",
   "ast": {
-    "absolutePath": "/mnt/d/AGIN-WORKS-GITHUB/OPEN-DEFI/agin-dropdisco/factory/contracts/DexSwapFeeSetter.sol",
+    "absolutePath": "/mnt/d/AGIN-WORKS-GITHUB/HARMONY/Grant-Harmony-Source-main/DexSwap-AMM/contracts-factory/contracts/DexSwapFeeSetter.sol",
     "exportedSymbols": {
       "DexSwapFeeSetter": [
         1547
@@ -199,12 +199,12 @@
         "src": "36:24:4"
       },
       {
-        "absolutePath": "/mnt/d/AGIN-WORKS-GITHUB/OPEN-DEFI/agin-dropdisco/factory/contracts/interfaces/IDexSwapFactory.sol",
+        "absolutePath": "/mnt/d/AGIN-WORKS-GITHUB/HARMONY/Grant-Harmony-Source-main/DexSwap-AMM/contracts-factory/contracts/interfaces/IDexSwapFactory.sol",
         "file": "./interfaces/IDexSwapFactory.sol",
         "id": 1387,
         "nodeType": "ImportDirective",
         "scope": 1548,
-        "sourceUnit": 3199,
+        "sourceUnit": 3438,
         "src": "62:42:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -305,7 +305,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_IDexSwapFactory_$3198",
+              "typeIdentifier": "t_contract$_IDexSwapFactory_$3437",
               "typeString": "contract IDexSwapFactory"
             },
             "typeName": {
@@ -313,10 +313,10 @@
               "id": 1394,
               "name": "IDexSwapFactory",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3198,
+              "referencedDeclaration": 3437,
               "src": "215:15:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IDexSwapFactory_$3198",
+                "typeIdentifier": "t_contract$_IDexSwapFactory_$3437",
                 "typeString": "contract IDexSwapFactory"
               }
             },
@@ -392,7 +392,7 @@
                       "referencedDeclaration": 1395,
                       "src": "341:7:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_IDexSwapFactory_$3198",
+                        "typeIdentifier": "t_contract$_IDexSwapFactory_$3437",
                         "typeString": "contract IDexSwapFactory"
                       }
                     },
@@ -426,10 +426,10 @@
                         "name": "IDexSwapFactory",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3198,
+                        "referencedDeclaration": 3437,
                         "src": "351:15:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_IDexSwapFactory_$3198_$",
+                          "typeIdentifier": "t_type$_t_contract$_IDexSwapFactory_$3437_$",
                           "typeString": "type(contract IDexSwapFactory)"
                         }
                       },
@@ -443,13 +443,13 @@
                       "nodeType": "FunctionCall",
                       "src": "351:25:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_IDexSwapFactory_$3198",
+                        "typeIdentifier": "t_contract$_IDexSwapFactory_$3437",
                         "typeString": "contract IDexSwapFactory"
                       }
                     },
                     "src": "341:35:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IDexSwapFactory_$3198",
+                      "typeIdentifier": "t_contract$_IDexSwapFactory_$3437",
                       "typeString": "contract IDexSwapFactory"
                     }
                   },
@@ -568,7 +568,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4823,
+                            "referencedDeclaration": 5062,
                             "src": "461:3:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -644,10 +644,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4826,
-                        4827
+                        5065,
+                        5066
                       ],
-                      "referencedDeclaration": 4827,
+                      "referencedDeclaration": 5066,
                       "src": "453:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -802,7 +802,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4823,
+                            "referencedDeclaration": 5062,
                             "src": "645:3:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -878,10 +878,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4826,
-                        4827
+                        5065,
+                        5066
                       ],
-                      "referencedDeclaration": 4827,
+                      "referencedDeclaration": 5066,
                       "src": "637:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1090,7 +1090,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4823,
+                            "referencedDeclaration": 5062,
                             "src": "806:3:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -1166,10 +1166,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4826,
-                        4827
+                        5065,
+                        5066
                       ],
-                      "referencedDeclaration": 4827,
+                      "referencedDeclaration": 5066,
                       "src": "798:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1228,7 +1228,7 @@
                         "referencedDeclaration": 1395,
                         "src": "867:7:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IDexSwapFactory_$3198",
+                          "typeIdentifier": "t_contract$_IDexSwapFactory_$3437",
                           "typeString": "contract IDexSwapFactory"
                         }
                       },
@@ -1239,7 +1239,7 @@
                       "lValueRequested": false,
                       "memberName": "setFeeTo",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3180,
+                      "referencedDeclaration": 3419,
                       "src": "867:16:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
@@ -1348,7 +1348,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4823,
+                            "referencedDeclaration": 5062,
                             "src": "975:3:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -1424,10 +1424,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4826,
-                        4827
+                        5065,
+                        5066
                       ],
-                      "referencedDeclaration": 4827,
+                      "referencedDeclaration": 5066,
                       "src": "967:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1486,7 +1486,7 @@
                         "referencedDeclaration": 1395,
                         "src": "1036:7:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IDexSwapFactory_$3198",
+                          "typeIdentifier": "t_contract$_IDexSwapFactory_$3437",
                           "typeString": "contract IDexSwapFactory"
                         }
                       },
@@ -1497,7 +1497,7 @@
                       "lValueRequested": false,
                       "memberName": "setFeeToSetter",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3185,
+                      "referencedDeclaration": 3424,
                       "src": "1036:22:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
@@ -1606,7 +1606,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4823,
+                            "referencedDeclaration": 5062,
                             "src": "1169:3:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -1682,10 +1682,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4826,
-                        4827
+                        5065,
+                        5066
                       ],
-                      "referencedDeclaration": 4827,
+                      "referencedDeclaration": 5066,
                       "src": "1161:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1744,7 +1744,7 @@
                         "referencedDeclaration": 1395,
                         "src": "1230:7:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IDexSwapFactory_$3198",
+                          "typeIdentifier": "t_contract$_IDexSwapFactory_$3437",
                           "typeString": "contract IDexSwapFactory"
                         }
                       },
@@ -1755,7 +1755,7 @@
                       "lValueRequested": false,
                       "memberName": "setProtocolFee",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3190,
+                      "referencedDeclaration": 3429,
                       "src": "1230:22:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_uint8_$returns$__$",
@@ -1877,7 +1877,7 @@
                                   "name": "msg",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 4823,
+                                  "referencedDeclaration": 5062,
                                   "src": "1371:3:4",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_message",
@@ -1960,7 +1960,7 @@
                                       "name": "msg",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 4823,
+                                      "referencedDeclaration": 5062,
                                       "src": "1397:3:4",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_magic_message",
@@ -2097,10 +2097,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4826,
-                        4827
+                        5065,
+                        5066
                       ],
-                      "referencedDeclaration": 4827,
+                      "referencedDeclaration": 5066,
                       "src": "1362:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2176,7 +2176,7 @@
                         "referencedDeclaration": 1395,
                         "src": "1471:7:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IDexSwapFactory_$3198",
+                          "typeIdentifier": "t_contract$_IDexSwapFactory_$3437",
                           "typeString": "contract IDexSwapFactory"
                         }
                       },
@@ -2187,7 +2187,7 @@
                       "lValueRequested": false,
                       "memberName": "setSwapFee",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3197,
+                      "referencedDeclaration": 3436,
                       "src": "1471:18:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint32_$returns$__$",
@@ -2302,7 +2302,7 @@
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/mnt/d/AGIN-WORKS-GITHUB/OPEN-DEFI/agin-dropdisco/factory/contracts/DexSwapFeeSetter.sol",
+      "absolutePath": "/mnt/d/AGIN-WORKS-GITHUB/HARMONY/Grant-Harmony-Source-main/DexSwap-AMM/contracts-factory/contracts/DexSwapFeeSetter.sol",
       "exportedSymbols": {
         "DexSwapFeeSetter": [
           1547
@@ -2325,8 +2325,8 @@
       },
       {
         "attributes": {
-          "SourceUnit": 3199,
-          "absolutePath": "/mnt/d/AGIN-WORKS-GITHUB/OPEN-DEFI/agin-dropdisco/factory/contracts/interfaces/IDexSwapFactory.sol",
+          "SourceUnit": 3438,
+          "absolutePath": "/mnt/d/AGIN-WORKS-GITHUB/HARMONY/Grant-Harmony-Source-main/DexSwap-AMM/contracts-factory/contracts/interfaces/IDexSwapFactory.sol",
           "file": "./interfaces/IDexSwapFactory.sol",
           "scope": 1548,
           "symbolAliases": [
@@ -2445,7 +2445,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "IDexSwapFactory",
-                  "referencedDeclaration": 3198,
+                  "referencedDeclaration": 3437,
                   "type": "contract IDexSwapFactory"
                 },
                 "id": 1394,
@@ -2651,7 +2651,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 3198,
+                                  "referencedDeclaration": 3437,
                                   "type": "type(contract IDexSwapFactory)",
                                   "value": "IDexSwapFactory"
                                 },
@@ -2791,10 +2791,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                4826,
-                                4827
+                                5065,
+                                5066
                               ],
-                              "referencedDeclaration": 4827,
+                              "referencedDeclaration": 5066,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -2835,7 +2835,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 4823,
+                                      "referencedDeclaration": 5062,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -3075,10 +3075,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                4826,
-                                4827
+                                5065,
+                                5066
                               ],
-                              "referencedDeclaration": 4827,
+                              "referencedDeclaration": 5066,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -3119,7 +3119,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 4823,
+                                      "referencedDeclaration": 5062,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -3361,10 +3361,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                4826,
-                                4827
+                                5065,
+                                5066
                               ],
-                              "referencedDeclaration": 4827,
+                              "referencedDeclaration": 5066,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -3405,7 +3405,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 4823,
+                                      "referencedDeclaration": 5062,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -3494,7 +3494,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "setFeeTo",
-                              "referencedDeclaration": 3180,
+                              "referencedDeclaration": 3419,
                               "type": "function (address) external"
                             },
                             "children": [
@@ -3644,10 +3644,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                4826,
-                                4827
+                                5065,
+                                5066
                               ],
-                              "referencedDeclaration": 4827,
+                              "referencedDeclaration": 5066,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -3688,7 +3688,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 4823,
+                                      "referencedDeclaration": 5062,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -3777,7 +3777,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "setFeeToSetter",
-                              "referencedDeclaration": 3185,
+                              "referencedDeclaration": 3424,
                               "type": "function (address) external"
                             },
                             "children": [
@@ -3926,10 +3926,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                4826,
-                                4827
+                                5065,
+                                5066
                               ],
-                              "referencedDeclaration": 4827,
+                              "referencedDeclaration": 5066,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -3970,7 +3970,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 4823,
+                                      "referencedDeclaration": 5062,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -4059,7 +4059,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "setProtocolFee",
-                              "referencedDeclaration": 3190,
+                              "referencedDeclaration": 3429,
                               "type": "function (uint8) external"
                             },
                             "children": [
@@ -4235,10 +4235,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                4826,
-                                4827
+                                5065,
+                                5066
                               ],
-                              "referencedDeclaration": 4827,
+                              "referencedDeclaration": 5066,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -4305,7 +4305,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 4823,
+                                              "referencedDeclaration": 5062,
                                               "type": "msg",
                                               "value": "msg"
                                             },
@@ -4397,7 +4397,7 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 4823,
+                                                  "referencedDeclaration": 5062,
                                                   "type": "msg",
                                                   "value": "msg"
                                                 },
@@ -4534,7 +4534,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "setSwapFee",
-                              "referencedDeclaration": 3197,
+                              "referencedDeclaration": 3436,
                               "type": "function (address,uint32) external"
                             },
                             "children": [
@@ -4620,15 +4620,21 @@
     "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
   },
   "networks": {
-    "4": {
+    "1666600000": {
       "events": {},
       "links": {},
-      "address": "0xF642AFE94350E285A9ae3fE8baE3FB9607fDBfCD",
-      "transactionHash": "0x34b66d72a94d27e07291481a00580377ce7dbf026ac902d69a35c257c45dc482"
+      "address": "0x9A462BDfb4195C0394614008505EB0BEde044AE9",
+      "transactionHash": "0x6ef39db22e0505c43031f1448b714db6ff06f3300b15756da5317f4b13ef86e9"
+    },
+    "1666700000": {
+      "events": {},
+      "links": {},
+      "address": "0x418e0Ff88241A6a24F5299e5D83ECB5a4d948541",
+      "transactionHash": "0xb9e1208eec63ffb8ef2e8c8f835c01b93bf04a308e2ff3e81e24f0dec32f87fe"
     }
   },
   "schemaVersion": "3.4.1",
-  "updatedAt": "2021-08-31T03:27:58.879Z",
+  "updatedAt": "2022-01-28T13:47:30.537Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
