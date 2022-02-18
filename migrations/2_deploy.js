@@ -4,14 +4,18 @@ const DexSwapDeployer = artifacts.require("DexSwapDeployer");
 const DexSwapFactory = artifacts.require("DexSwapFactory");
 const DexSwapERC20 = artifacts.require("DexSwapERC20");
 const xDEXS = artifacts.require("xDEXS");
-const WETH = artifacts.require("WETH");
-
+const WONE = artifacts.require("WONE");
+const WMATIC = artifacts.require("WMATIC");
+const AURORA = artifacts.require("AURORA");
 
 
 const argValue = (arg, defaultValue) => process.argv.includes(arg) ? process.argv[process.argv.indexOf(arg) + 1] : defaultValue
 const network = () => argValue('--network', 'local')
-const xDEXSBASE = "0xA9c6d7F92a894310B9C04968326A9dE6D0e38724";
 
+const DexSwapZoo = "0x45e92Dd180ECa40f90556Aa5B84620F253194E5E"; // AURORA
+// const DexSwapZoo = ""; // MUMBAI
+// const DexSwapZoo = ""; // MAINNET
+// const DexSwapZoo = ""; // TESTNET
 
 module.exports = async (deployer) => {
 
@@ -19,20 +23,21 @@ module.exports = async (deployer) => {
     const bnWithDecimals = (number, decimals) => BN(number).mul(BN(10).pow(BN(decimals)));
     const senderAccount = (await web3.eth.getAccounts())[0];
 
-    if (network() === "rinkeby") {
+    if (network() === "aurora") {
 
 
         console.log();
-        console.log(":: Deploying WETH"); 
-        const WETHInstance = await WETH.at('0xc778417E063141139Fce010982780140Aa0cD5Ab');
+        console.log(":: Deploying Wrapped Aurora"); 
+        await deployer.deploy(AURORA)
+        const AURORAInstance = await AURORA.deployed();
         console.log();
-        console.log(":: WETH DEPOSIT CALL");
-        await WETHInstance.deposit({ from: senderAccount, value: 1 });
+        console.log(":: AURORA DEPOSIT CALL");
+        await AURORAInstance.deposit({ from: senderAccount, value: 1 });
         console.log();
 
         console.log();
         console.log(":: Init DexSwap Deployer");
-        await deployer.deploy(DexSwapDeployer, xDEXSBASE, senderAccount, WETHInstance.address, [WETHInstance.address], [xDEXSBASE], [25]);
+        await deployer.deploy(DexSwapDeployer, DexSwapZoo, senderAccount, AURORAInstance.address, [AURORAInstance.address], [DexSwapZoo], [25]);
         const dexSwapDeployer = await DexSwapDeployer.deployed();
 
         console.log();
@@ -59,7 +64,7 @@ module.exports = async (deployer) => {
         
 
         console.log(":: Start Deploying FeeReceiver");
-        await deployer.deploy(DexSwapFeeReceiver, senderAccount, DexSwapFactoryInstance.address, WETHInstance.address, xDEXSBASE, senderAccount);
+        await deployer.deploy(DexSwapFeeReceiver, senderAccount, DexSwapFactoryInstance.address, AURORAInstance.address, DexSwapZoo, senderAccount);
         const DexSwapFeeReceiverInstance =  await DexSwapFeeReceiver.deployed();
         console.log();
 
@@ -85,7 +90,7 @@ module.exports = async (deployer) => {
 
         console.log();
         console.log(":: Updating Protocol FeeReceiver");
-        await DexSwapFeeReceiverInstance.changeReceivers(xDEXSBASE, senderAccount, {from: senderAccount});
+        await DexSwapFeeReceiverInstance.changeReceivers(DexSwapZoo, senderAccount, {from: senderAccount});
 
         
         console.log();
@@ -109,21 +114,48 @@ module.exports = async (deployer) => {
         console.log(`Fee Receiver Address:`, DexSwapFeeReceiverInstance.address);
         console.log("====================================================================");
         
+        console.log("====================================================================");
+        console.log(`DexSwapZoo Token Address:`,  DexSwapZoo);
+        console.log("====================================================================");
+
+        console.log("====================================================================");
+        console.log(`AURORA Token Address:`,  AURORAInstance.address);
+        console.log("====================================================================");
+
         console.log("=============================================================================");
         console.log(`Code Hash:`, await DexSwapFactoryInstance.INIT_CODE_PAIR_HASH());
         console.log("=============================================================================");
 
         console.log("DONE");
 
-    } else if (network() === "matic") {
+    } else if (network() === "mumbai") {
 
         console.log();
-        console.log(":: Deploying WETH"); 
-        const WETHInstance = await WETH.at('0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889');
+        console.log(":: Deploying WMATIC"); 
+        
+        const WONEInstance = await WMATIC.at('0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889'); 
+        
         console.log();
-        console.log(":: WETH DEPOSIT CALL");
-        await WETHInstance.deposit({ from: senderAccount, value: 1 });
+        console.log(":: WMATIC DEPOSIT CALL");
+        await WONEInstance.deposit({ from: senderAccount, value: 1 });
         console.log();
+
+
+        console.log();
+        console.log(":: Init DexSwap Deployer");
+        await deployer.deploy(DexSwapDeployer, DexSwapZoo, senderAccount, WONEInstance.address, [WONEInstance.address], [DexSwapZoo], [25]);
+        const dexSwapDeployer = await DexSwapDeployer.deployed();
+
+        console.log();
+        console.log(":: Start Sending 1 WEI ...");
+        await dexSwapDeployer.send(1, {from: senderAccount}); 
+
+
+        console.log();
+        console.log(":: Sent deployment reimbursement");
+        await dexSwapDeployer.deploy({from: senderAccount})
+        console.log("Deployed dexSwap");
+
 
         console.log();
         console.log(":: Deploying Factory");
@@ -136,15 +168,9 @@ module.exports = async (deployer) => {
         await deployer.deploy(DexSwapERC20);
         const DexSwapLP = await DexSwapERC20.deployed();
         
-        console.log();
-        console.log(":: Start Deploying xDEXS Token");
-        await deployer.deploy(xDEXS, "xDEXS", "xDEXS", bnWithDecimals(1000000, 18));
-        const xDEXSInstance = await xDEXS.deployed();
-        await xDEXSInstance.mint(senderAccount,    bnWithDecimals(10000, 18),   { from: senderAccount }); // - 100k
-
 
         console.log(":: Start Deploying FeeReceiver");
-        await deployer.deploy(DexSwapFeeReceiver, senderAccount, DexSwapFactoryInstance.address, WETHInstance.address, xDEXSInstance.address, senderAccount);
+        await deployer.deploy(DexSwapFeeReceiver, senderAccount, DexSwapFactoryInstance.address, WONEInstance.address, DexSwapZoo, senderAccount);
         const DexSwapFeeReceiverInstance =  await DexSwapFeeReceiver.deployed();
         console.log();
 
@@ -170,8 +196,13 @@ module.exports = async (deployer) => {
 
         console.log();
         console.log(":: Updating Protocol FeeReceiver");
-        await DexSwapFeeReceiverInstance.changeReceivers(xDEXSInstance.address, senderAccount, {from: senderAccount});
+        await DexSwapFeeReceiverInstance.changeReceivers(DexSwapZoo, senderAccount, {from: senderAccount});
 
+        
+        console.log();
+        console.log("====================================================================");
+        console.log(`Deployer Address:`,     dexSwapDeployer.address);
+        console.log("====================================================================");
 
         console.log("====================================================================");
         console.log(`Factory Address:`,      DexSwapFactoryInstance.address);
@@ -182,21 +213,17 @@ module.exports = async (deployer) => {
         console.log("====================================================================");
 
         console.log("====================================================================");
-        console.log(`XDEXS Address:`,        xDEXSInstance.address);
-        console.log("====================================================================");
-
-        console.log("====================================================================");
         console.log(`Fee Setter Address:`,   DexSwapFeeSetterInstance.address);
         console.log("====================================================================");
 
         console.log("====================================================================");
         console.log(`Fee Receiver Address:`, DexSwapFeeReceiverInstance.address);
         console.log("====================================================================");
-        
+
         console.log("=============================================================================");
         console.log(`Code Hash:`, await DexSwapFactoryInstance.INIT_CODE_PAIR_HASH());
         console.log("=============================================================================");
 
-
+        console.log("DONE");
     }
 };

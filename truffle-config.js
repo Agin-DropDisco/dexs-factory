@@ -3,11 +3,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const mnemonic = process.env.MNEMONIC;
-const privateKey1 = process.env.PRIVATE_KEY_1;
-const privateKey2 = process.env.PRIVATE_KEY_2;
-const privateKey3 = process.env.PRIVATE_KEY_3;
-console.log(`MNEMONIC: ${process.env.MNEMONIC}`)
-console.log(`INFURA_API_KEY: ${process.env.INFURA_API_KEY}`)
+// const { TruffleProvider } = require('@harmony-js/core');
+
+
 
 
 module.exports = {
@@ -18,50 +16,22 @@ module.exports = {
   // for more details on how to specify configuration options!
   //
   networks: {
-    development: {
-      host: "127.0.0.1",
-      port: 7545,
-      network_id: "*"
-    },
+
     ganache: {
       host: "127.0.0.1",
       port: 8545,
       network_id: "*"
     },
-    rinkeby: {
-      provider: () => new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}`),
-      network_id: 4,
-      gas: 0,
-      gasPrice: 2100000000, //2 Gwei,
-      skipDryRun: true
+    aurora: {
+      provider: () => new HDWalletProvider(mnemonic, `https://testnet.aurora.dev`),
+      network_id: 0x4e454153,
+      gas: 10000000,
+      from: '0xAd5104295Eedf7cd678387F18cb2da733F40E1be' 
     },
-    ropsten: {
-      provider: () => new HDWalletProvider([privateKey1, privateKey2, privateKey3], `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`),
-      network_id: 3,
-      gas: 0,
-      gasPrice: 2100000000, //2 Gwei,
-      skipDryRun: true
-    },
-    moonbase: {	
-      provider: () => new HDWalletProvider([privateKey1, privateKey2, privateKey3], `https://rpc.testnet.moonbeam.network`),
-      network_id: 1287,	
-      gas: 0,
-      gasPrice: 2100000000,
-      skipDryRun: true
-    },
-    oasis: {	
-      provider: () => new HDWalletProvider([privateKey], `https://rpc.oasiseth.org:8545`),
-      network_id: 69,	
-      gas: 1000000,	
-      gasPrice: 1000000000 //1 Gwei	
-    },	
-    matic: {	
-      provider: () => new HDWalletProvider([privateKey1, privateKey2, privateKey3], `https://matic-mumbai.chainstacklabs.com`),
+    mumbai: {	
+      provider: () => new HDWalletProvider(mnemonic, `https://matic-mumbai.chainstacklabs.com`),
       network_id: 80001,
-      gas: 0,
-      gasPrice: 2100000000, //2 Gwei,
       skipDryRun: true,
-      confirmations: 2,
       timeoutBlocks: 200
     },
   },
