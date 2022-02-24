@@ -21,6 +21,13 @@
     "feeSetter": "0x15eaa82328e1404Fc8cEa216602d14e69a0C4bf9"
   },
 
+  "mumbai": {
+    "deployer": "0xFD0694c8bCE70c72F8a4Ce59b4cCCA7f6B3B28F3",
+    "factory": "0x3CBb677671F7A56e579dF767236B815338022CDd",
+    "feeReceiver": "0x12FCF92B534D7c6FFAF5f7629d6A5471d985BE18",
+    "feeSetter": "0x9A763E5ebAD23Ccf6E8e6E3024F4ED645077B2B9"
+  },
+  
   "rinkeby": {
     "deployer": "0xf5dFE89F8d12D87AdCaF27537EE27C2CaEF40dDB",
     "factory": "0xC9ae161dc43957cD56ed7CaC2cC4e302b44Df374",
