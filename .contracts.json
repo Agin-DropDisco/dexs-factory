@@ -8,10 +8,10 @@
   },
 
   "harmony": {
-    "deployer": "0x6CD5d036d1697A421F1dEE97c242A3F6C82A3F6d",
-    "factory": "0xE77A7C836720897cd3fBd6c0C0067C5Ca278603F",
-    "feeReceiver": "0x2340Fb341bAc3C1243123Deefac7209296A65f47",
-    "feeSetter": "0x9A462BDfb4195C0394614008505EB0BEde044AE9"
+    "deployer": "0x96Ae74c69C623C05bCa6471393c5f8f852c76A6a",
+    "factory": "0xfE5C1388f7eA885922af2840D0278cb4e91D3D78",
+    "feeReceiver": "0x10C555D084499c3255B735E33A7222C06D092a89",
+    "feeSetter": "0x63BFC4B3086CC6933EE76f284AFFD0a7025e10eD"
   },
 
   "harmony_testnet": {
