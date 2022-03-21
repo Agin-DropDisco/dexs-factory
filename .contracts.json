@@ -35,7 +35,7 @@
     "feeSetter": "0x6993067c296e5D986f051D34B36f1038Ce524486"
   },
   
-   "alfajores": {
+ "alfajores": {
     "deployer": "0xfD44b61E794377e28819d35739b27113e34560eD",
     "factory": "0x63135b617780F6dB1B54003Ad2f5AAF502fD7540",
     "feeReceiver": "0x63ef464125b6117F0210E1702a076EAB88334f7E",
