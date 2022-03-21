@@ -15,10 +15,10 @@
   },
 
   "harmony_testnet": {
-    "deployer": "0x377DA5b8287e0360e53B7F4589c8dCB531c7936B",
-    "factory": "0xb0D7c1f3f06B4130fc880131309f812d06bF667F",
-    "feeReceiver": "0x12C71617a3cae63ad141E99e3FA8EE17AB0A1718",
-    "feeSetter": "0xe263Dc233b93f83a6716FD4f6f30F7b76043b13d"
+    "deployer": "0x0577e2163cccE36a83b658e682Abd7643b16EfE0",
+    "factory": "0x45658fAA8e4BD7598aC435786B011E926bbEAF81",
+    "feeReceiver": "0xF7440A64E9BDdda507a5F70E498340754d66Af4C",
+    "feeSetter": "0x7Bc298a2C3C55e2882753eCF69dC84D3193b4C26"
   },
 
   "mumbai": {
